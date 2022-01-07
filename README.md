@@ -7,3 +7,6 @@ File structure
 -style.css
 -app.js
 
+This is a demo project. Implementation of concept is done using youtube learning.
+darksky api is used to pull all the necessary weather information we need.
+
