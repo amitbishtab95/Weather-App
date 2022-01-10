@@ -15,3 +15,8 @@ Learned using-https://youtu.be/wPElVpR1rwA
 
 Some modification in css and api are done by me..
 
+Can view here-https://amitbishtab95.github.io/Weather-App/
+
+Mobile view-
+
+![WhatsApp Image 2022-01-10 at 5 23 42 PM](https://user-images.githubusercontent.com/46969565/148762087-2eb6b9c3-a101-430c-8b57-9ad5fc85d500.jpeg)
