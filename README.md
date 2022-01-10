@@ -6,7 +6,7 @@ File structure
 -index.html
 -style.css
 -app.js
--icon nt used
+-icon not used
 
 This is a demo project. Implementation of concept is done using youtube learning.
 OpenWeatherMap api is used to get all the necessary weather information we need.
