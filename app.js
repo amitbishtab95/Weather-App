@@ -1,10 +1,10 @@
 window.addEventListener("load", () => {
     let lon;
     let lat;
-    let timeZone = document.getElementsByClassName('location - timezone');
-    let tempDegree = document.getElementsByClassName('temprature-degree');
-    let Description = document.getElementsByClassName('temperature-description');
-    // let temp = document.getElementsByClassName('');
+    let timeZone = document.querySelector(".location-timezone");
+    let tempDegree = document.querySelector(".temprature-degree");
+    let temp_description = document.querySelector(".temperature-description");
+    let weather_icon = document.querySelector(".weatherIcon");
 
 
     if (navigator.geolocation) {
@@ -12,7 +12,8 @@ window.addEventListener("load", () => {
             console.log(position);
             lon = position.coords.longitude;
             lat = position.coords.latitude;
-            const proxy = "https://cors-anywhere.herokuapp.com/corsdemo";
+            // const proxy = "https://cors-anywhere.herokuapp.com/corsdemo"; generally used for proxy server 
+
             const api = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=${100}&appid=2ae4119c29e9679309e9100706dc8671`;
             fetch(api)
                 .then(response => {
@@ -24,6 +25,7 @@ window.addEventListener("load", () => {
                     const { name } = data[0];
                     // console.log(name);
 
+                    // this is to get api as per the current city name 
                     const api2 = `http://api.openweathermap.org/data/2.5/weather?q=${name}&appid=2ae4119c29e9679309e9100706dc8671`;
                     fetch(api2)
                         .then(r => {
@@ -31,17 +33,21 @@ window.addEventListener("load", () => {
                             return r.json();
                         })
                         .then(data2 => {
-                            return console.log(data2)
+                            console.log(data2)
                             const { temp } = data2.main;
-                            const { description } = data2.weather;
-                            const { timezone } = data2;
-                            console.log(temp);
-                            Description.textContent = description;
-                            tempDegree.textContent = temp;
-                            timeZone.textContent = timezone;
-                        });
+                            const { description, icon } = data2.weather[0];
+                            const { name } = data2;
+
+                            temp_description.textContent = description;
+                            tempDegree.textContent = (temp - 273.15).toFixed(2);
+                            timeZone.textContent = name;
+                            var ic = "http://openweathermap.org/img/w/" + icon + ".png";
+                            // console.log(ic);
+                            weather_icon.src = ic;
+                        });;
                 });
 
         });
     }
+
 });

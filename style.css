@@ -7,7 +7,6 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* background-color: aqua; */
 }
 .main-section {
   width: 100%;
@@ -15,9 +14,37 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(rgb(47, 150, 163), rgb(46, 62, 143));
-  font-family: sans-serif;
+  background: linear-gradient(rgb(14, 212, 238), rgb(83, 97, 168));
+  font-family: cursive;
   color: white;
+  position: relative;
+}
+.header,
+.footer {
+  height: 10vh;
+  width: 100%;
+  text-align: center;
+  /* background: linear-gradient(rgb(21, 168, 187), rgb(72, 86, 156)); */
+
+  background: linear-gradient(rgb(21, 201, 162), rgb(62, 228, 159));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.header {
+  top: 0;
+}
+.footer {
+  height: 11vh;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.footer a {
+  cursor: pointer;
+  color: #015e64;
+  text-decoration: none;
 }
 .location,
 .temperature {
@@ -28,21 +55,65 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+.location h1 {
+  font-size: 38px;
+  font-family: cursive;
+}
+.location img {
+  height: 90px !important;
+  width: 90px !important;
+}
 .temperature {
   flex-direction: column;
   /* background-color: darkkhaki; */
 }
 .degree-section {
-  /* background-color: crimson; */
   display: flex;
   align-items: center;
   cursor: pointer;
-  /* justify-content: space-between; */
 }
 .degree-section span {
   margin: 10px;
   font-size: 30px;
+  /* color: rgb(243, 59, 3); */
 }
 .degree-section h2 {
-  font-size: 40px;
+  font-size: 50px;
+}
+.temperature .temperature-description {
+  font-size: 35px;
+  font-family: cursive;
+}
+
+@media (max-width: 460px) {
+  .main-section {
+    overflow-y: scroll;
+  }
+  .location,
+  .temperature {
+    width: 100%;
+    flex-direction: column;
+  }
+  .location h1 {
+    font-size: 33px;
+  }
+  .location img {
+    height: 75px;
+    width: 75px;
+  }
+  .degree-section span {
+    margin: 10px;
+    font-size: 37px;
+  }
+  .degree-section h2 {
+    font-size: 37px;
+  }
+  .temperature .temperature-description {
+    font-size: 30px;
+  }
+
+  .header,
+  .footer {
+    font-size: 22px;
+  }
 }
