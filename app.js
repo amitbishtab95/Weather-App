@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
     let lat;
     let timeZone = document.getElementsByClassName('location - timezone');
     let tempDegree = document.getElementsByClassName('temprature-degree');
-    let description = document.getElementsByClassName('temperature-description');
+    let Description = document.getElementsByClassName('temperature-description');
     // let temp = document.getElementsByClassName('');
 
 
@@ -32,6 +32,13 @@ window.addEventListener("load", () => {
                         })
                         .then(data2 => {
                             return console.log(data2)
+                            const { temp } = data2.main;
+                            const { description } = data2.weather;
+                            const { timezone } = data2;
+                            console.log(temp);
+                            Description.textContent = description;
+                            tempDegree.textContent = temp;
+                            timeZone.textContent = timezone;
                         });
                 });
 
