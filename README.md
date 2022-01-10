@@ -6,7 +6,12 @@ File structure
 -index.html
 -style.css
 -app.js
+-icon nt used
 
 This is a demo project. Implementation of concept is done using youtube learning.
-darksky api is used to pull all the necessary weather information we need.
+OpenWeatherMap api is used to get all the necessary weather information we need.
+
+Learned using-https://youtu.be/wPElVpR1rwA
+
+Some modification in css and api are done by me..
 
